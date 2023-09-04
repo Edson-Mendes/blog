@@ -1,0 +1,19 @@
+.container__small-card {
+  /* border: 1px solid white; */
+  width: 45vw;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.small-card__photo {
+  margin-right: 20px;
+}
+
+.small-card__photo > img {
+  width: 15vw;
+}
+
+.small-card__title > h1 {
+  font-size: 16px;
+}
