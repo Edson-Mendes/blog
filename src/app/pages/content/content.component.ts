@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { articlesFaker } from '../../data/dataFaker';
+import { Article } from 'src/app/interfaces/article';
+import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
   selector: 'app-content',
@@ -8,29 +9,16 @@ import { articlesFaker } from '../../data/dataFaker';
   styleUrls: ['./content.component.css'],
 })
 export class ContentComponent implements OnInit {
-  id: string | null = '';
-  photoCover: string = '';
-  contentTitle: string = '';
-  contentDescription: string = '';
+  article?: Article;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private articleService: ArticleService
+  ) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe((value) => (this.id = value.get('id')));
-    this.getContent(this.id);
-  }
-
-  getContent(id: string | null) {
-    const result = articlesFaker.find(
-      (article) => article.id.toString() === id
-    );
-
-    if (result !== undefined) {
-      this.contentTitle = result.title;
-      this.contentDescription = result.description;
-      this.photoCover = result.photo;
-    } else {
-      console.error(`Noticia not found for id: ${this.id}`);
-    }
+    let id: string | null;
+    this.route.paramMap.subscribe((value) => (id = value.get('id')));
+    this.article = this.articleService.findArticleById(id!);
   }
 }
