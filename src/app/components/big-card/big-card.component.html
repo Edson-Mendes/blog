@@ -1,20 +1,15 @@
 <div class="container__big-card">
   <div class="big-card__photo">
-    <img
-      [src]="photoCover"
-      alt="image placeholder"
-    />
+    <img [src]="article?.photo" alt="image placeholder" />
   </div>
   <div class="big-card__title">
     <h1>
-      <a [routerLink]="['content', id]">{{ cardTitle }}</a>
+      <a [routerLink]="['content', article?.id]">{{ article?.title }}</a>
     </h1>
   </div>
   <div class="big-card__description">
     <p>
-      <a [routerLink]="['content', id]"
-        >{{ cardDescription }}</a
-      >
+      <a [routerLink]="['content', article?.id]">{{ article?.description }}</a>
     </p>
   </div>
 </div>

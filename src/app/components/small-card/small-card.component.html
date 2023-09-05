@@ -1,11 +1,11 @@
 <div class="container__small-card">
   <div class="small-card__photo">
-    <img [src]="photoCover" alt="image placeholder" />
+    <img [src]="article?.photo" alt="image placeholder" />
   </div>
   <div class="small-card__title">
     <h1>
-      <a [routerLink]="['content', id]">
-        {{ cardTitle }}
+      <a [routerLink]="['content', article?.id]">
+        {{ article?.title }}
       </a>
     </h1>
   </div>

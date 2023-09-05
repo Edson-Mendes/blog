@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Article } from 'src/app/interfaces/article';
 
 @Component({
   selector: 'app-big-card',
@@ -6,8 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./big-card.component.css'],
 })
 export class BigCardComponent {
-  @Input({required: true}) id: string = '0';
-  @Input() photoCover: string = '';
-  @Input() cardTitle: string = '';
-  @Input() cardDescription: string = '';
+  @Input({required: true}) article?: Article;
 }

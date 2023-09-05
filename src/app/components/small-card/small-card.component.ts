@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Article } from 'src/app/interfaces/article';
 
 @Component({
   selector: 'app-small-card',
@@ -6,7 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./small-card.component.css']
 })
 export class SmallCardComponent {
-  @Input({required: true}) id: string = '';
-  @Input() photoCover: string = '';
-  @Input() cardTitle: string = '';
+  @Input({required: true}) article?: Article;
 }
