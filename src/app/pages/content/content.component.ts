@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { noticiasFaker } from '../../data/dataFaker';
+import { articlesFaker } from '../../data/dataFaker';
 
 @Component({
   selector: 'app-content',
@@ -21,7 +21,7 @@ export class ContentComponent implements OnInit {
   }
 
   getContent(id: string | null) {
-    const result = noticiasFaker.find(
+    const result = articlesFaker.find(
       (article) => article.id.toString() === id
     );
 
