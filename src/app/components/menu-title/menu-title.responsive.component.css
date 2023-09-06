@@ -1,0 +1,24 @@
+@media only screen and (max-width: 768px) {
+  .menu-title {
+    font-size: 90px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-title {
+    font-size: 70px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .menu-title {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .menu-title {
+    font-size: 35px;
+  }
+
+}

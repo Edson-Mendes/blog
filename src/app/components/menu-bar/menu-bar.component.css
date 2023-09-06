@@ -4,6 +4,16 @@
 }
 
 .container__menu-bar > ul > li {
-  margin-right: 20px;
+  margin-right: 40px;
+  font-size: 14px;
   list-style: none;
+}
+
+a {
+  color: rgb(160, 158, 158);
+}
+
+.menu-bar__item--selected > a {
+  font-weight: bold;
+  color: white;
 }
